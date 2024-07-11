@@ -17,15 +17,15 @@ import org.example.org.example.service.formatter.currencyFormat
 import org.example.org.example.service.formatter.shortDate
 import org.javamoney.moneta.Money
 
-data class RentalAgreement
+class RentalAgreement
 private constructor(
     private val tool: Tool,
     val checkout: LocalDate,
     val due: LocalDate,
-    private val weekdays: List<LocalDate>,
-    private val weekends: List<LocalDate>,
-    private val holidays: List<LocalDate>,
-    private val rentalPrice: RentalPrice,
+    weekdays: List<LocalDate>,
+    weekends: List<LocalDate>,
+    holidays: List<LocalDate>,
+    rentalPrice: RentalPrice,
     val discount: Int
 ) {
   private val chargeableWeekdays = if (rentalPrice.weekdayCharge) weekdays else emptyList()
