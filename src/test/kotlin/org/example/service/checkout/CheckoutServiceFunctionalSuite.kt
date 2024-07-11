@@ -17,7 +17,8 @@ import org.example.org.example.persistence.enums.ToolCode
 import org.example.org.example.persistence.enums.ToolType
 import org.example.org.example.service.checkout.CheckoutService
 import org.example.org.example.service.data.UnknownError
-import org.example.org.example.service.formatter.format
+import org.example.org.example.service.formatter.currencyFormat
+import org.example.org.example.service.formatter.shortDate
 import redis.embedded.RedisServer
 
 class CheckoutServiceFunctionalSuite :
@@ -108,14 +109,14 @@ class CheckoutServiceFunctionalSuite :
                   it.toolCode == ToolCode.LADW &&
                   it.toolType == ToolType.Ladder &&
                   it.rentalDays == 3 &&
-                  it.checkout.format() == "07/02/20" &&
-                  it.due.format() == "07/05/20" &&
-                  it.dailyCharge.format() == "$1.99" &&
+                  it.checkout.shortDate() == "07/02/20" &&
+                  it.due.shortDate() == "07/05/20" &&
+                  it.dailyCharge.currencyFormat() == "$1.99" &&
                   it.chargeDays == 2 &&
-                  it.prediscountCharge.format() == "$3.98" &&
+                  it.prediscountCharge.currencyFormat() == "$3.98" &&
                   it.discount == 10 &&
-                  it.discountAmount.format() == "$0.40" &&
-                  it.finalCharge.format() == "$3.58" &&
+                  it.discountAmount.currencyFormat() == "$0.40" &&
+                  it.finalCharge.currencyFormat() == "$3.58" &&
                   it.toString() ==
                       """Tool code: LADW
               |Tool type: Ladder
@@ -150,14 +151,14 @@ class CheckoutServiceFunctionalSuite :
                   it.toolCode == ToolCode.CHNS &&
                   it.toolType == ToolType.Chainsaw &&
                   it.rentalDays == 5 &&
-                  it.checkout.format() == "07/02/15" &&
-                  it.due.format() == "07/07/15" &&
-                  it.dailyCharge.format() == "$1.49" &&
+                  it.checkout.shortDate() == "07/02/15" &&
+                  it.due.shortDate() == "07/07/15" &&
+                  it.dailyCharge.currencyFormat() == "$1.49" &&
                   it.chargeDays == 3 &&
-                  it.prediscountCharge.format() == "$4.47" &&
+                  it.prediscountCharge.currencyFormat() == "$4.47" &&
                   it.discount == 25 &&
-                  it.discountAmount.format() == "$1.12" &&
-                  it.finalCharge.format() == "$3.35" &&
+                  it.discountAmount.currencyFormat() == "$1.12" &&
+                  it.finalCharge.currencyFormat() == "$3.35" &&
                   it.toString() ==
                       """Tool code: CHNS
               |Tool type: Chainsaw
@@ -192,14 +193,14 @@ class CheckoutServiceFunctionalSuite :
                   it.toolCode == ToolCode.JAKD &&
                   it.toolType == ToolType.Jackhammer &&
                   it.rentalDays == 6 &&
-                  it.checkout.format() == "09/03/15" &&
-                  it.due.format() == "09/09/15" &&
-                  it.dailyCharge.format() == "$2.99" &&
+                  it.checkout.shortDate() == "09/03/15" &&
+                  it.due.shortDate() == "09/09/15" &&
+                  it.dailyCharge.currencyFormat() == "$2.99" &&
                   it.chargeDays == 3 &&
-                  it.prediscountCharge.format() == "$8.97" &&
+                  it.prediscountCharge.currencyFormat() == "$8.97" &&
                   it.discount == 0 &&
-                  it.discountAmount.format() == "$0.00" &&
-                  it.finalCharge.format() == "$8.97" &&
+                  it.discountAmount.currencyFormat() == "$0.00" &&
+                  it.finalCharge.currencyFormat() == "$8.97" &&
                   it.toString() ==
                       """Tool code: JAKD
               |Tool type: Jackhammer
@@ -234,14 +235,14 @@ class CheckoutServiceFunctionalSuite :
                   it.toolCode == ToolCode.JAKR &&
                   it.toolType == ToolType.Jackhammer &&
                   it.rentalDays == 9 &&
-                  it.checkout.format() == "07/02/15" &&
-                  it.due.format() == "07/11/15" &&
-                  it.dailyCharge.format() == "$2.99" &&
+                  it.checkout.shortDate() == "07/02/15" &&
+                  it.due.shortDate() == "07/11/15" &&
+                  it.dailyCharge.currencyFormat() == "$2.99" &&
                   it.chargeDays == 5 &&
-                  it.prediscountCharge.format() == "$14.95" &&
+                  it.prediscountCharge.currencyFormat() == "$14.95" &&
                   it.discount == 0 &&
-                  it.discountAmount.format() == "$0.00" &&
-                  it.finalCharge.format() == "$14.95" &&
+                  it.discountAmount.currencyFormat() == "$0.00" &&
+                  it.finalCharge.currencyFormat() == "$14.95" &&
                   it.toString() ==
                       """Tool code: JAKR
               |Tool type: Jackhammer
@@ -276,14 +277,14 @@ class CheckoutServiceFunctionalSuite :
                   it.toolCode == ToolCode.JAKR &&
                   it.toolType == ToolType.Jackhammer &&
                   it.rentalDays == 4 &&
-                  it.checkout.format() == "07/02/20" &&
-                  it.due.format() == "07/06/20" &&
-                  it.dailyCharge.format() == "$2.99" &&
+                  it.checkout.shortDate() == "07/02/20" &&
+                  it.due.shortDate() == "07/06/20" &&
+                  it.dailyCharge.currencyFormat() == "$2.99" &&
                   it.chargeDays == 1 &&
-                  it.prediscountCharge.format() == "$2.99" &&
+                  it.prediscountCharge.currencyFormat() == "$2.99" &&
                   it.discount == 50 &&
-                  it.discountAmount.format() == "$1.50" &&
-                  it.finalCharge.format() == "$1.49" &&
+                  it.discountAmount.currencyFormat() == "$1.50" &&
+                  it.finalCharge.currencyFormat() == "$1.49" &&
                   it.toString() ==
                       """Tool code: JAKR
               |Tool type: Jackhammer

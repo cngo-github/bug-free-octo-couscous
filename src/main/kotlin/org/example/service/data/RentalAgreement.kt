@@ -13,7 +13,8 @@ import org.example.org.example.persistence.data.Tool
 import org.example.org.example.persistence.enums.ToolType
 import org.example.org.example.service.UsaRentalValidate
 import org.example.org.example.service.enums.CurrencyDenomination
-import org.example.org.example.service.formatter.format
+import org.example.org.example.service.formatter.currencyFormat
+import org.example.org.example.service.formatter.shortDate
 import org.javamoney.moneta.Money
 
 data class RentalAgreement
@@ -51,14 +52,14 @@ private constructor(
         |Tool type: ${tool.toolType}
         |Tool brand: ${tool.toolBrand}
         |Rental days: $rentalDays
-        |Checkout date: ${checkout.format()}
-        |Due date: ${due.format()}
-        |Daily charge: ${dailyCharge.format()}
+        |Checkout date: ${checkout.shortDate()}
+        |Due date: ${due.shortDate()}
+        |Daily charge: ${dailyCharge.currencyFormat()}
         |Charge days: $chargeDays
-        |Pre-discount charge: ${prediscountCharge.format()}
+        |Pre-discount charge: ${prediscountCharge.currencyFormat()}
         |Discount percent: $discount%
-        |Discount amount: ${discountAmount.format()}
-        |Final charge: ${finalCharge.format()}"""
+        |Discount amount: ${discountAmount.currencyFormat()}
+        |Final charge: ${finalCharge.currencyFormat()}"""
         .trimMargin()
   }
 
