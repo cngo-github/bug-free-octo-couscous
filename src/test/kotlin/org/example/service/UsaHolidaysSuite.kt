@@ -7,7 +7,7 @@ import java.net.URI
 import java.time.LocalDate
 import kotlin.time.Duration
 import kotlin.time.toJavaDuration
-import org.example.org.example.persistence.cache.RedisCacheDao
+import org.example.persistence.cache.RedisCacheDao
 import redis.embedded.RedisServer
 
 class UsaHolidaysSuite :

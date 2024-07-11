@@ -1,4 +1,4 @@
-package org.example.org.example.service.formatter
+package org.example.service.formatter
 
 import java.text.NumberFormat
 import java.util.*

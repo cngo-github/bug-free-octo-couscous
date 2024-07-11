@@ -1,4 +1,4 @@
-package org.example.org.example.service.domain
+package org.example.service.domain
 
 import java.time.LocalDate
 

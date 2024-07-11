@@ -4,10 +4,9 @@ import arrow.core.*
 import io.github.oshai.kotlinlogging.KotlinLogging
 import java.net.URI
 import java.time.LocalDateTime
-import org.example.org.example.persistence.db.SqliteDbDao
-import org.example.org.example.persistence.db.domain.ToolDBDao
-import org.example.org.example.persistence.enums.ToolCode
-import org.example.org.example.persistence.enums.ToolType
+import org.example.persistence.db.domain.ToolDBDao
+import org.example.persistence.enums.ToolCode
+import org.example.persistence.enums.ToolType
 import org.example.persistence.data.RentalPrice
 import org.example.persistence.data.ReservationId
 import org.example.persistence.data.Tool

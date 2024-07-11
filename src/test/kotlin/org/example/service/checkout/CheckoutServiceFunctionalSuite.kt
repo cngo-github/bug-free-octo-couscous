@@ -10,14 +10,13 @@ import java.sql.DriverManager
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import kotlin.time.Duration
-import org.example.org.example.persistence.cache.RedisCacheDao
-import org.example.org.example.persistence.db.SqliteDbDao
-import org.example.org.example.persistence.enums.ToolBrand
-import org.example.org.example.persistence.enums.ToolCode
-import org.example.org.example.persistence.enums.ToolType
-import org.example.org.example.service.checkout.CheckoutService
-import org.example.org.example.service.formatter.currencyFormat
-import org.example.org.example.service.formatter.shortDate
+import org.example.persistence.cache.RedisCacheDao
+import org.example.persistence.db.SqliteDbDao
+import org.example.persistence.enums.ToolBrand
+import org.example.persistence.enums.ToolCode
+import org.example.persistence.enums.ToolType
+import org.example.service.formatter.currencyFormat
+import org.example.service.formatter.shortDate
 import org.example.service.data.UnknownError
 import redis.embedded.RedisServer
 

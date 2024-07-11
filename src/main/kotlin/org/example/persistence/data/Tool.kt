@@ -4,9 +4,9 @@ import arrow.core.*
 import com.google.gson.*
 import io.github.oshai.kotlinlogging.KotlinLogging
 import java.lang.reflect.Type
-import org.example.org.example.persistence.enums.ToolBrand
-import org.example.org.example.persistence.enums.ToolCode
-import org.example.org.example.persistence.enums.ToolType
+import org.example.persistence.enums.ToolBrand
+import org.example.persistence.enums.ToolCode
+import org.example.persistence.enums.ToolType
 
 private val LOGGER = KotlinLogging.logger {}
 

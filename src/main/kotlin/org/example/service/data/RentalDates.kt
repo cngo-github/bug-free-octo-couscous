@@ -8,7 +8,7 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 import java.net.URI
 import java.time.LocalDate
 import kotlin.time.Duration
-import org.example.org.example.service.UsaDayValidate
+import org.example.service.UsaDayValidate
 
 class RentalDates
 private constructor(

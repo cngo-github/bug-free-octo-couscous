@@ -1,4 +1,4 @@
-package org.example.org.example.persistence.enums
+package org.example.persistence.enums
 
 enum class ToolBrand {
   Stihl,

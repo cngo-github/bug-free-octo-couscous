@@ -1,14 +1,14 @@
-package org.example.org.example.service.checkout
+package org.example.service.checkout
 
 import arrow.core.*
 import io.github.oshai.kotlinlogging.KotlinLogging
 import java.net.URI
 import java.time.LocalDate
 import kotlin.time.Duration
-import org.example.org.example.persistence.db.domain.ToolDBDao
-import org.example.org.example.persistence.enums.ToolCode
-import org.example.org.example.service.UsaRentalValidate
-import org.example.org.example.service.domain.RentalValidate
+import org.example.persistence.db.domain.ToolDBDao
+import org.example.persistence.enums.ToolCode
+import org.example.service.UsaRentalValidate
+import org.example.service.domain.RentalValidate
 import org.example.persistence.db.ToolSqliteDbDao
 import org.example.service.data.FailedToCheckout
 import org.example.service.data.RentalAgreement

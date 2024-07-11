@@ -1,4 +1,4 @@
-package org.example.org.example.persistence.db
+package org.example.persistence.db
 
 import arrow.core.Either
 import arrow.core.Option
@@ -8,7 +8,7 @@ import java.net.URI
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.ResultSet
-import org.example.org.example.persistence.db.domain.SqlDbDao
+import org.example.persistence.db.domain.SqlDbDao
 
 class SqliteDbDao(private val connection: Connection) : SqlDbDao {
   override fun query(query: String): Option<ResultSet> {

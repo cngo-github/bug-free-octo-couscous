@@ -6,8 +6,6 @@ import io.kotest.matchers.shouldBe
 import java.net.URI
 import java.time.Year
 import kotlin.time.Duration
-import org.example.org.example.persistence.cache.HolidaysCacheDao
-import org.example.org.example.persistence.cache.RedisCacheDao
 import org.example.persistence.data.Holiday
 import redis.embedded.RedisServer
 

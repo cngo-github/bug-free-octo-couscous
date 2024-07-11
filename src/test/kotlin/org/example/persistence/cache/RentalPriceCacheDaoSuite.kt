@@ -5,9 +5,7 @@ import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 import java.net.URI
 import kotlin.time.Duration
-import org.example.org.example.persistence.cache.RedisCacheDao
-import org.example.org.example.persistence.cache.RentalPriceCacheDao
-import org.example.org.example.persistence.enums.ToolType
+import org.example.persistence.enums.ToolType
 import org.example.persistence.data.RentalPrice
 import redis.embedded.RedisServer
 

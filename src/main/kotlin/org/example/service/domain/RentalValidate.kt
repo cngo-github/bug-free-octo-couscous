@@ -1,8 +1,8 @@
-package org.example.org.example.service.domain
+package org.example.service.domain
 
 import arrow.core.Option
-import org.example.org.example.persistence.enums.ToolCode
-import org.example.org.example.persistence.enums.ToolType
+import org.example.persistence.enums.ToolCode
+import org.example.persistence.enums.ToolType
 import org.example.persistence.data.RentalPrice
 import org.example.persistence.data.Tool
 

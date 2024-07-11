@@ -14,8 +14,8 @@ import kotlin.time.toJavaDuration
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okio.use
-import org.example.org.example.persistence.cache.HolidaysCacheDao
-import org.example.org.example.service.domain.Holidays
+import org.example.persistence.cache.HolidaysCacheDao
+import org.example.service.domain.Holidays
 import org.example.persistence.data.Holiday
 
 class UsaHolidays private constructor(private val holidaysCacheDao: HolidaysCacheDao) : Holidays {

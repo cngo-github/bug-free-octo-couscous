@@ -1,4 +1,4 @@
-package org.example.org.example.persistence.cache
+package org.example.persistence.cache
 
 import arrow.core.Option
 import kotlin.time.Duration

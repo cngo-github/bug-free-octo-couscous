@@ -1,13 +1,12 @@
-package org.example.org.example.service
+package org.example.service
 
 import arrow.core.Option
 import io.github.oshai.kotlinlogging.KotlinLogging
 import java.net.URI
 import java.time.DayOfWeek
 import java.time.LocalDate
-import org.example.org.example.service.domain.DayValidate
-import org.example.org.example.service.domain.Holidays
-import org.example.service.UsaHolidays
+import org.example.service.domain.DayValidate
+import org.example.service.domain.Holidays
 
 class UsaDayValidate private constructor(private val holidays: Holidays) : DayValidate {
   override fun isWeekend(date: LocalDate): Boolean {

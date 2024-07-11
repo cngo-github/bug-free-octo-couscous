@@ -7,11 +7,11 @@ import java.net.URI
 import java.time.LocalDate
 import javax.money.MonetaryContextBuilder
 import kotlin.time.Duration
-import org.example.org.example.persistence.enums.ToolType
-import org.example.org.example.service.UsaRentalValidate
-import org.example.org.example.service.enums.CurrencyDenomination
-import org.example.org.example.service.formatter.currencyFormat
-import org.example.org.example.service.formatter.shortDate
+import org.example.persistence.enums.ToolType
+import org.example.service.UsaRentalValidate
+import org.example.service.enums.CurrencyDenomination
+import org.example.service.formatter.currencyFormat
+import org.example.service.formatter.shortDate
 import org.example.persistence.data.RentalPrice
 import org.example.persistence.data.ReservationId
 import org.example.persistence.data.Tool

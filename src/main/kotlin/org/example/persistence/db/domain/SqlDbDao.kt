@@ -1,4 +1,4 @@
-package org.example.org.example.persistence.db.domain
+package org.example.persistence.db.domain
 
 import arrow.core.Option
 import java.sql.ResultSet
