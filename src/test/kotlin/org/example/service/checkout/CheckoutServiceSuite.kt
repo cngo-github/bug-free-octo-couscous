@@ -8,15 +8,15 @@ import java.sql.DriverManager
 import java.time.LocalDate
 import kotlin.time.Duration
 import org.example.org.example.persistence.cache.RedisCacheDao
-import org.example.org.example.persistence.data.RentalPrice
-import org.example.org.example.persistence.data.ReservationId
-import org.example.org.example.persistence.data.Tool
 import org.example.org.example.persistence.db.SqliteDbDao
 import org.example.org.example.persistence.enums.ToolBrand
 import org.example.org.example.persistence.enums.ToolCode
 import org.example.org.example.persistence.enums.ToolType
 import org.example.org.example.service.checkout.CheckoutService
-import org.example.org.example.service.data.Reservation
+import org.example.persistence.data.RentalPrice
+import org.example.persistence.data.ReservationId
+import org.example.persistence.data.Tool
+import org.example.service.data.Reservation
 import org.javamoney.moneta.Money
 import redis.embedded.RedisServer
 
@@ -119,7 +119,7 @@ class CheckoutServiceSuite :
               service.flatMap {
                 it.checkout(
                         Reservation(
-                            ReservationId("notReal"),
+                            ReservationId.generate(),
                             Tool(ToolBrand.Werner, ToolCode.JAKR, ToolType.Ladder),
                             RentalPrice(
                                 ToolType.Ladder,

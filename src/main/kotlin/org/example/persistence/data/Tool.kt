@@ -1,4 +1,4 @@
-package org.example.org.example.persistence.data
+package org.example.persistence.data
 
 import arrow.core.*
 import com.google.gson.*

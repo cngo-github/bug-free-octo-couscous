@@ -8,12 +8,12 @@ import java.sql.DriverManager
 import kotlin.time.Duration
 import kotlin.time.toJavaDuration
 import org.example.org.example.persistence.cache.RedisCacheDao
-import org.example.org.example.persistence.data.Tool
 import org.example.org.example.persistence.db.SqliteDbDao
 import org.example.org.example.persistence.enums.ToolBrand
 import org.example.org.example.persistence.enums.ToolCode
 import org.example.org.example.persistence.enums.ToolType
 import org.example.org.example.service.UsaRentalValidate
+import org.example.persistence.data.Tool
 import redis.embedded.RedisServer
 
 class UsaRentalValidateSuite :

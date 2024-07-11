@@ -7,9 +7,9 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 import java.net.URI
 import java.time.Year
 import kotlin.time.Duration
-import org.example.org.example.persistence.data.Holiday
-import org.example.org.example.persistence.data.HolidayDeserializer
-import org.example.org.example.persistence.data.HolidaySerializer
+import org.example.persistence.data.Holiday
+import org.example.persistence.data.HolidayDeserializer
+import org.example.persistence.data.HolidaySerializer
 
 class HolidaysCacheDao private constructor(private val cacheDao: CacheDao) {
   fun get(year: Year): Option<List<Holiday>> {

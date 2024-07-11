@@ -1,9 +1,9 @@
-package org.example.org.example.persistence.data
+package org.example.persistence.data
 
 import java.time.LocalDateTime
 import java.util.*
 
-data class ReservationId(val id: String) {
+class ReservationId private constructor(val id: String) {
   companion object {
     fun generate(): ReservationId {
       val uuid = UUID.randomUUID().toString().replace("-", "")

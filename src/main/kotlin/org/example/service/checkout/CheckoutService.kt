@@ -8,12 +8,12 @@ import kotlin.time.Duration
 import org.example.org.example.persistence.db.domain.ToolDBDao
 import org.example.org.example.persistence.enums.ToolCode
 import org.example.org.example.service.UsaRentalValidate
-import org.example.org.example.service.data.FailedToCheckout
-import org.example.org.example.service.data.RentalAgreement
-import org.example.org.example.service.data.RentalAgreementValidationError
-import org.example.org.example.service.data.Reservation
 import org.example.org.example.service.domain.RentalValidate
 import org.example.persistence.db.ToolSqliteDbDao
+import org.example.service.data.FailedToCheckout
+import org.example.service.data.RentalAgreement
+import org.example.service.data.RentalAgreementValidationError
+import org.example.service.data.Reservation
 
 class CheckoutService(
     private val toolDbDao: ToolDBDao,

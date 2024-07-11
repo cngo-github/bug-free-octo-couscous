@@ -7,8 +7,8 @@ import java.net.URI
 import kotlin.time.Duration
 import org.example.org.example.persistence.cache.RedisCacheDao
 import org.example.org.example.persistence.cache.RentalPriceCacheDao
-import org.example.org.example.persistence.data.RentalPrice
 import org.example.org.example.persistence.enums.ToolType
+import org.example.persistence.data.RentalPrice
 import redis.embedded.RedisServer
 
 class RentalPriceCacheDaoSuite :

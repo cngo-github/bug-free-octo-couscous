@@ -1,4 +1,4 @@
-package org.example.org.example.service.data
+package org.example.service.data
 
 import arrow.core.None
 import arrow.core.Option

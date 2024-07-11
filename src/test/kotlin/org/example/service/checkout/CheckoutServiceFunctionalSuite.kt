@@ -16,9 +16,9 @@ import org.example.org.example.persistence.enums.ToolBrand
 import org.example.org.example.persistence.enums.ToolCode
 import org.example.org.example.persistence.enums.ToolType
 import org.example.org.example.service.checkout.CheckoutService
-import org.example.org.example.service.data.UnknownError
 import org.example.org.example.service.formatter.currencyFormat
 import org.example.org.example.service.formatter.shortDate
+import org.example.service.data.UnknownError
 import redis.embedded.RedisServer
 
 class CheckoutServiceFunctionalSuite :

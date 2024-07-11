@@ -1,4 +1,4 @@
-package org.example.org.example.persistence.data
+package org.example.persistence.data
 
 import arrow.core.*
 import com.google.gson.*
@@ -6,8 +6,6 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 import java.lang.reflect.Type
 import org.example.org.example.persistence.enums.ToolType
 import org.javamoney.moneta.Money
-
-private val LOGGER = KotlinLogging.logger {}
 
 data class RentalPrice(
     val type: ToolType,
@@ -21,6 +19,8 @@ data class RentalPrice(
   }
 
   companion object {
+    private val LOGGER = KotlinLogging.logger {}
+
     fun from(
         type: String,
         dailyPrice: String,
@@ -64,6 +64,10 @@ class RentalPriceDeserializer : JsonDeserializer<RentalPrice> {
             o.get("holidayCharge").asBoolean)
         .getOrNull()
   }
+
+  companion object {
+    private val LOGGER = KotlinLogging.logger {}
+  }
 }
 
 class RentalPriceSerializer : JsonSerializer<RentalPrice> {
@@ -79,5 +83,9 @@ class RentalPriceSerializer : JsonSerializer<RentalPrice> {
     o.addProperty("holidayCharge", p0.holidayCharge)
 
     return o
+  }
+
+  companion object {
+    private val LOGGER = KotlinLogging.logger {}
   }
 }
