@@ -131,7 +131,7 @@ private constructor(
                 discount ->
               RentalAgreement(
                   tool,
-                  checkout,
+                  dates.checkout,
                   dates.due,
                   dates.weekdays,
                   dates.weekends,

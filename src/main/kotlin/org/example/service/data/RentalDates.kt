@@ -10,24 +10,14 @@ import java.time.LocalDate
 import kotlin.time.Duration
 import org.example.org.example.service.UsaDayValidate
 
-data class RentalDates(
+class RentalDates
+private constructor(
     val checkout: LocalDate,
     val due: LocalDate,
     val weekdays: List<LocalDate>,
     val weekends: List<LocalDate>,
     val holidays: List<LocalDate>
 ) {
-  val totalDays = weekdays.size + weekends.size + holidays.size
-
-  fun chargeDays(
-      includeWeekdays: Boolean,
-      includeWeekends: Boolean,
-      includeHolidays: Boolean
-  ): Int {
-    return if (includeWeekdays) weekdays.size
-    else 0 + if (includeWeekends) weekends.size else 0 + if (includeHolidays) holidays.size else 0
-  }
-
   companion object {
     private val LOGGER = KotlinLogging.logger {}
 
@@ -46,9 +36,10 @@ data class RentalDates(
       val holidays =
           dayValidate.map { d -> allDays.filter { d.isHoliday(it) } }.getOrElse { emptyList() }
 
-      return when (allDays.isNotEmpty()) {
-        true -> Some(RentalDates(checkout, allDays.last(), weekdays, weekends, holidays))
-        false -> None
+      return when {
+        allDays.isNotEmpty() ->
+            Some(RentalDates(checkout, allDays.last(), weekdays, weekends, holidays))
+        else -> None
       }.onNone { LOGGER.error { "Failed to make the ${RentalDates::class.java} object." } }
     }
   }

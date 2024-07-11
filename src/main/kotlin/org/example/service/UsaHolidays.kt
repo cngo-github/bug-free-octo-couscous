@@ -51,8 +51,8 @@ class UsaHolidays private constructor(private val holidaysCacheDao: HolidaysCach
         .map { OkHttpClient.Builder().build().newCall(it).execute() }
         .flatMap {
           it.use { r ->
-                when (r.code) {
-                  200 ->
+                when {
+                  r.code == 200 ->
                       Either.catch { r.body?.string() }
                           .map { json -> JsonParser.parseString(json) }
                           .map { e ->

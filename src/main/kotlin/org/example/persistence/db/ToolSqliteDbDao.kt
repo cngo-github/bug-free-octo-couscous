@@ -1,13 +1,13 @@
-package org.example.org.example.persistence.db
+package org.example.persistence.db
 
 import arrow.core.*
-import arrow.core.raise.option
 import io.github.oshai.kotlinlogging.KotlinLogging
 import java.net.URI
 import java.time.LocalDateTime
 import org.example.org.example.persistence.data.RentalPrice
 import org.example.org.example.persistence.data.ReservationId
 import org.example.org.example.persistence.data.Tool
+import org.example.org.example.persistence.db.SqliteDbDao
 import org.example.org.example.persistence.db.domain.ToolDBDao
 import org.example.org.example.persistence.enums.ToolCode
 import org.example.org.example.persistence.enums.ToolType
@@ -26,10 +26,10 @@ class ToolSqliteDbDao private constructor(private val sqliteDbDao: SqliteDbDao) 
             } else null
           }
         }
-        .flatMap { s -> s.let { seq -> option { seq.map { it.bind() }.toList() } } }
+        .map { s -> s.map { it.getOrNull() }.filterNotNull().toList() }
         .flatMap {
-          when (it.size) {
-            1 -> Some(it.first())
+          when {
+            it.size == 1 -> Some(it.first())
             else -> None
           }
         }
@@ -55,10 +55,10 @@ class ToolSqliteDbDao private constructor(private val sqliteDbDao: SqliteDbDao) 
             } else null
           }
         }
-        .flatMap { s -> s.let { seq -> option { seq.map { it.bind() }.toList() } } }
+        .map { s -> s.map { it.getOrNull() }.filterNotNull().toList() }
         .flatMap {
-          when (it.size) {
-            1 -> Some(it.first())
+          when {
+            it.size == 1 -> Some(it.first())
             else -> None
           }
         }
@@ -75,9 +75,9 @@ class ToolSqliteDbDao private constructor(private val sqliteDbDao: SqliteDbDao) 
         .update(query)
         .toEither { UnknownError }
         .flatMap {
-          when (it) {
-            0 -> Either.Left(ToolReservationFailed("Failed to reserve the tool $toolCode"))
-            1 -> Either.Right(reservationId)
+          when {
+            it == 1 -> Either.Right(reservationId)
+            it == 0 -> Either.Left(ToolReservationFailed("Failed to reserve the tool $toolCode"))
             else ->
                 Either.Left(
                     InvalidDatabaseState(
@@ -96,9 +96,9 @@ class ToolSqliteDbDao private constructor(private val sqliteDbDao: SqliteDbDao) 
         .update(query)
         .toEither { UnknownError }
         .flatMap {
-          when (it) {
-            1 -> Either.Right(reservationId)
-            0 ->
+          when {
+            it == 1 -> Either.Right(reservationId)
+            it == 0 ->
                 Either.Left(
                     ToolCheckoutFailed(
                         "Failed to checkout reservation ${reservationId.id} for tool ${toolType.name}."))

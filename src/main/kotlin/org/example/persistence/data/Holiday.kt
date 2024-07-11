@@ -16,18 +16,18 @@ data class Holiday(val name: String, val observedOn: LocalDate) {
 
   companion object {
     fun from(name: String, observedOn: String): Option<Holiday> {
-      return when (name.isBlank()) {
-        true -> {
-          LOGGER.error { "Invalid holiday, name: $name, observed on: $observedOn" }
-          None
-        }
-        false ->
+      return when {
+        name.isNotBlank() ->
             Either.catch<LocalDate> { LocalDate.parse(observedOn) }
                 .mapLeft {
                   LOGGER.error(it) { "Invalid holiday, name: $name, observed on: $observedOn" }
                 }
                 .getOrNone()
                 .map { Holiday(name, it) }
+        else -> {
+          LOGGER.error { "Invalid holiday, name: $name, observed on: $observedOn" }
+          None
+        }
       }
     }
   }

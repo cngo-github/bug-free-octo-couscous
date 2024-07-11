@@ -18,8 +18,8 @@ class RedisCacheDao private constructor(private val pool: JedisPool) : CacheDao 
         .onRight { pool.returnResource(it.first) }
         .getOrNone()
         .flatMap {
-          when (it.second != null) {
-            true -> Some(it.second)
+          when {
+            !it.second.isNullOrBlank() -> Some(it.second)
             else -> None
           }
         }
@@ -34,8 +34,8 @@ class RedisCacheDao private constructor(private val pool: JedisPool) : CacheDao 
         .onRight { pool.returnResource(it.first) }
         .getOrNone()
         .flatMap {
-          when (it.second != null) {
-            true -> Some(it.second)
+          when {
+            !it.second.isNullOrBlank() -> Some(it.second)
             else -> None
           }
         }

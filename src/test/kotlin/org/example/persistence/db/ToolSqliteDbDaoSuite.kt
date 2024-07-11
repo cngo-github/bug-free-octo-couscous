@@ -6,7 +6,6 @@ import io.kotest.matchers.shouldBe
 import java.net.URI
 import java.sql.DriverManager
 import org.example.org.example.persistence.db.SqliteDbDao
-import org.example.org.example.persistence.db.ToolSqliteDbDao
 import org.example.org.example.persistence.enums.ToolBrand
 import org.example.org.example.persistence.enums.ToolCode
 import org.example.org.example.persistence.enums.ToolType
